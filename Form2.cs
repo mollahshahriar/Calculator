@@ -28,5 +28,10 @@ namespace Calculator
             Form3 myform = new Form3();
             myform.ShowDialog();
         }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
