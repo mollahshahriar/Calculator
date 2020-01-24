@@ -72,9 +72,56 @@ namespace Calculator
             Result2.Text = Result2.Text + "0";
         }
 
-        private void button16_Click(object sender, EventArgs e)
+
+        private void Button17_Click(object sender, EventArgs e)
+        {
+            Result2.Clear();
+        }
+
+        private void Button16_Click(object sender, EventArgs e)
         {
             Result2.Text = Result2.Text + ".";
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            double Firstnumber;
+            double.TryParse(Result2.Text, out Firstnumber);
+            double kilo = 1.60934;
+            double answer = Firstnumber * kilo;
+
+            Result2.Text = answer.ToString();
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            double Firstnumber;
+            double.TryParse(Result2.Text, out Firstnumber);
+            double miles = 0.621371;
+            double answer = Firstnumber * miles;
+
+            Result2.Text = answer.ToString();
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            double Firstnumber;
+            double.TryParse(Result2.Text, out Firstnumber);
+            double kilom = 0.453592;
+            double answer = Firstnumber * kilom;
+
+            Result2.Text = answer.ToString();
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            double Firstnumber;
+            double.TryParse(Result2.Text, out Firstnumber);
+            double kilom = 2.20462;
+            double answer = Firstnumber * kilom;
+
+            Result2.Text = answer.ToString();
         }
     }
 }

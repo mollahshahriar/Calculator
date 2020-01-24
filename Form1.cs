@@ -12,6 +12,9 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
+        double FirstNumber;
+        string Operation;
+
         public Form1()
         {
             InitializeComponent();
@@ -24,7 +27,9 @@ namespace Calculator
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            
+            FirstNumber = Convert.ToDouble(Result1.Text);
+            Result1.Text = "0";
+            Operation = "-";
         }
 
         private void Button16_Click(object sender, EventArgs e)
@@ -82,9 +87,69 @@ namespace Calculator
             Result1.Text = Result1.Text + "0";
         }
 
-        private void button15_Click(object sender, EventArgs e)
+        private void Button18_Click(object sender, EventArgs e)
+        {
+            Result1.Clear();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            FirstNumber = Convert.ToDouble(Result1.Text);
+            Result1.Text = "0";
+            Operation = "+";
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            FirstNumber = Convert.ToDouble(Result1.Text);
+            Result1.Text = "0";
+            Operation = "*";
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            FirstNumber = Convert.ToDouble(Result1.Text);
+            Result1.Text = "0";
+            Operation = "/";
+        }
+
+        private void Button17_Click(object sender, EventArgs e)
+        {
+            double SecondNumber;
+            double Result;
+
+            SecondNumber = Convert.ToDouble(Result1.Text);
+
+            if (Operation == "+")
+            {
+                Result = (FirstNumber + SecondNumber);
+                Result1.Text = Convert.ToString(Result);
+                FirstNumber = Result;
+            }
+            if (Operation == "-")
+            {
+                Result = (FirstNumber - SecondNumber);
+                Result1.Text = Convert.ToString(Result);
+                FirstNumber = Result;
+            }
+            if (Operation == "*")
+            {
+                Result = (FirstNumber * SecondNumber);
+                Result1.Text = Convert.ToString(Result);
+                FirstNumber = Result;
+            }
+            if (Operation == "/")
+            {
+                Result = (FirstNumber / SecondNumber);
+                Result1.Text = Convert.ToString(Result);
+                FirstNumber = Result;
+            }
+        }
+
+        private void Button15_Click(object sender, EventArgs e)
         {
             Result1.Text = Result1.Text + ".";
+
         }
     }
 }
